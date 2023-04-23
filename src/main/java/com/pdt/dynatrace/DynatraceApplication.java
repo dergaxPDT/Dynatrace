@@ -1,13 +1,14 @@
-package com.pdt.dynatrance;
+package com.pdt.dynatrace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DynatranceApplication {
+@EnabledSwagger2
+public class DynatraceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DynatranceApplication.class, args);
+        SpringApplication.run(DynatraceApplication.class, args);
     }
 
 }
