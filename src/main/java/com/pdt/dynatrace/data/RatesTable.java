@@ -1,15 +1,15 @@
-package com.pdt.dynatrace;
+package com.pdt.dynatrace.data;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 
 
 @AllArgsConstructor
 @Getter
+@ApiModel("Personal data of Student")
 public class RatesTable {
     Table table;
     String currency;

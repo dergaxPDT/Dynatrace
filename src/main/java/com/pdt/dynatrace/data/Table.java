@@ -1,4 +1,4 @@
-package com.pdt.dynatrace;
+package com.pdt.dynatrace.data;
 
 public enum Table {
     A, B, C

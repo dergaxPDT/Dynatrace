@@ -1,4 +1,4 @@
-package com.pdt.dynatrace;
+package com.pdt.dynatrace.data;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
