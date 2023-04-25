@@ -19,7 +19,7 @@ dependencies {
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2")
     implementation("io.springfox:springfox-swagger2:2.9.2")
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
-
+testImplementation("com.github.tomakehurst:wiremock:1.58")
 }
 
 tasks.withType<Test> {
