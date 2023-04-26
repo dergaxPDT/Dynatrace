@@ -1,6 +1,7 @@
 package com.pdt.dynatrace.rest;
 
 import com.pdt.dynatrace.data.MinMaxRate;
+import com.pdt.dynatrace.exception.TooMuchQuantityException;
 import com.pdt.dynatrace.service.NbpService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ public class NbpController {
     @GetMapping("/maxAndMin")
     @ApiOperation(value = "2 - the max and min average value exchange rate", notes = "code is shortcut for exchange rate (ex. eur, gbp). topCount - the number of last quotations ")
     public MinMaxRate getMaxAndMinRate(@RequestParam String code, @RequestParam int topCount){
+        if (topCount > 255) throw new TooMuchQuantityException(topCount);
         return nbpService.getMinAndMaxRate(code, topCount);
     }
 
