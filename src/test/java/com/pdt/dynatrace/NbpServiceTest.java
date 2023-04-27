@@ -1,20 +1,19 @@
 package com.pdt.dynatrace;
 
-import com.pdt.dynatrace.data.MinMaxRate;
-import com.pdt.dynatrace.data.RatesTable;
+import com.pdt.dynatrace.model.MinMaxRate;
+import com.pdt.dynatrace.model.RatesTable;
 import com.pdt.dynatrace.service.NbpService;
+import lombok.RequiredArgsConstructor;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-//    @Disabled("Manual Test for test API NBP")
+@Disabled("Manual Test for test API NBP")
+@RequiredArgsConstructor
 class NbpServiceTest {
 
-    @Autowired
-    private NbpService nbpService;
+    private final NbpService nbpService;
 
     @Test
     void getAverageExchangeRate() {
@@ -30,7 +29,7 @@ class NbpServiceTest {
     }
 
     @Test
-    void getAveragesssExchangeRate() {
+    void getAveragesExchangeRate() {
         MinMaxRate minMaxRate = nbpService.getMinAndMaxRate("gbp", 10);
         assertEquals(5.2086, minMaxRate.getMinRate());
         assertEquals(5.3369, minMaxRate.getMaxRate());

@@ -1,14 +1,15 @@
-package com.pdt.dynatrace.data;
+package com.pdt.dynatrace.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
 public class Rate {
     String no;
 
-    String effectiveDate;//TODO na date pewnie zmienic
+    String effectiveDate;
     double mid;
 }
