@@ -14,6 +14,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 
 import java.io.IOException;
@@ -27,12 +29,13 @@ import static org.springframework.http.RequestEntity.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 
-@RequiredArgsConstructor
+@SpringBootTest
 class ContractWireMockTest {
 
-    static WireMockServer wireMockServer = new WireMockServer(8021);
+    private static final WireMockServer wireMockServer = new WireMockServer(8021);
 
-    private final NbpService service;
+    @Autowired
+    private NbpService service;
 
     @BeforeAll
     static void setupBefore(){

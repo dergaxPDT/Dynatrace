@@ -16,9 +16,9 @@ import java.util.Collections;
 @Service
 public class NbpService {
 
-    private final RestTemplate      restTemplate = new RestTemplateBuilder()
-                .errorHandler(new RestTemplateResponseErrorHandler())
-            .build();;
+    private final RestTemplate restTemplate = new RestTemplateBuilder()
+            .errorHandler(new RestTemplateResponseErrorHandler())
+            .build();
 
     @Value("${api.url}")
     private String url;

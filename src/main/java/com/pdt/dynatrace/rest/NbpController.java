@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class NbpController {
 
-//    private final NbpService nbpService = new NbpService(new RestTemplateBuilder());
-
     private  final NbpService nbpService;
+
     @GetMapping("/average")
     @ApiOperation(value = "1 - Find mid rate by code and date", notes = "code is shortcut for exchange rate (ex. eur, gbp). Date format RRRR-MM-DD")
     public double getAverageExchangeRate(@RequestParam String code, @RequestParam String date){
